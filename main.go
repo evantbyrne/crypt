@@ -7,9 +7,10 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/evantbyrne/crypt"
+	"github.com/alecthomas/kingpen"
 	"golang.org/x/crypto/ssh/terminal"
-	"gopkg.in/alecthomas/kingpin.v2"
+
+	crypt "github.com/evantbyrne/crypt/lib"
 )
 
 var (

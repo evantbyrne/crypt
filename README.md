@@ -6,9 +6,7 @@ Utility for encrypting and decrypting files with AES-256 GCM and Scrypt.
 
 Make sure that [Go](https://golang.org/) is installed and your PATH includes GOBIN. Then run the following:
 
-	bash$ go get github.com/evantbyrne/crypt
-	bash$ go get gopkg.in/alecthomas/kingpin.v2
-	bash$ go install github.com/evantbyrne/crypt/crypt
+	bash$ go get -u github.com/evantbyrne/crypt
 
 ## Usage
 
