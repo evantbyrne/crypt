@@ -27,18 +27,19 @@ Make sure that [Go](https://golang.org/) is installed and your PATH includes GOB
 Encrypt file and store in file:
 
 	bash$ crypt -i foo.txt -e -o foo.txt.crypt
-	Password: 
+	Password:
+	Verifying - Password:
 
 Decrypt file and display in terminal:
 
 	bash$ crypt -i foo.txt.crypt -d
-	Password: 
+	Password:
 	The quick brown fox jumps over the lazy dog.
 
 Decrypt file and store in file:
 
 	bash$ crypt -i foo.txt.crypt -d -o bar.txt
-	Password: 
+	Password:
 
 ## Encrypted data format
 

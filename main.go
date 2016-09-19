@@ -42,6 +42,17 @@ func main() {
 	fmt.Println()
 
 	if *encryptFlag {
+		fmt.Print("Verifying - Password: ")
+		password_attempt2, err := terminal.ReadPassword(int(syscall.Stdin))
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println()
+
+		if string(password) != string(password_attempt2) {
+			log.Fatal("The provided passwords do not match!")
+		}
+
 		salt := crypt.NewNonce()
 		key := crypt.NewKey(salt, password)
 		nonce := crypt.NewNonce()
