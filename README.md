@@ -1,5 +1,7 @@
 # crypt
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/evantbyrne/crypt)](https://goreportcard.com/report/github.com/evantbyrne/crypt)
+
 Utility for encrypting and decrypting files with AES-256 GCM and Scrypt.
 
 ## Install
