@@ -1,8 +1,8 @@
 [submodule "vendor/golang.org/x/crypto"]
 	path = vendor/golang.org/x/crypto
 	url = https://go.googlesource.com/crypto
-[submodule "vendor/github.com/alecthomas/kingpen"]
-	path = vendor/github.com/alecthomas/kingpen
+[submodule "vendor/github.com/alecthomas/kingpin"]
+	path = vendor/github.com/alecthomas/kingpin
 	url = https://github.com/alecthomas/kingpin.git
 [submodule "vendor/github.com/alecthomas/template"]
 	path = vendor/github.com/alecthomas/template
