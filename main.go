@@ -7,7 +7,7 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/alecthomas/kingpen"
+	"github.com/alecthomas/kingpin"
 	"golang.org/x/crypto/ssh/terminal"
 
 	crypt "github.com/evantbyrne/crypt/lib"
