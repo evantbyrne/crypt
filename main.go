@@ -56,7 +56,7 @@ func main() {
 		if *outFlag == "" {
 			fmt.Printf("%s\n", out)
 		} else {
-			err = ioutil.WriteFile(*outFlag, out, 0644)
+			err = ioutil.WriteFile(*outFlag, out, 0600)
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -74,7 +74,7 @@ func main() {
 		if *outFlag == "" {
 			fmt.Printf("%s\n", out)
 		} else {
-			err = ioutil.WriteFile(*outFlag, out, 0644)
+			err = ioutil.WriteFile(*outFlag, out, 0600)
 			if err != nil {
 				log.Fatal(err)
 			}
