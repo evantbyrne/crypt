@@ -68,7 +68,7 @@ func main() {
 		key := crypt.NewKey(salt, password)
 		out, err := crypt.Decrypt(key, nonce, ciphertext)
 		if err != nil {
-			fmt.Println(err)
+			log.Fatal(err)
 		}
 
 		if *outFlag == "" {
