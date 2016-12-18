@@ -8,7 +8,7 @@ import (
 	"log"
 )
 
-func Decrypt(key, nonce, ciphertext []byte) ([]byte, error) {
+func Decrypt(key, nonce, ciphertext []byte) (plaintext []byte, err error) {
 	block, err := aes.NewCipher(key)
 	if err != nil {
 		panic(err.Error())
@@ -19,7 +19,7 @@ func Decrypt(key, nonce, ciphertext []byte) ([]byte, error) {
 		return nil, err
 	}
 
-	plaintext, err := aesgcm.Open(nil, nonce, ciphertext, nil)
+	plaintext, err = aesgcm.Open(nil, nonce, ciphertext, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -27,10 +27,8 @@ func Decrypt(key, nonce, ciphertext []byte) ([]byte, error) {
 	return plaintext, err
 }
 
-func Encrypt(key, nonce, cleartext []byte) ([]byte, error) {
+func Encrypt(key, nonce, cleartext []byte) (ciphertext []byte, err error) {
 	var block cipher.Block
-	var ciphertext []byte
-	var err error
 
 	if block, err = aes.NewCipher(key); err != nil {
 		return nil, err
@@ -46,14 +44,14 @@ func Encrypt(key, nonce, cleartext []byte) ([]byte, error) {
 	return ciphertext, err
 }
 
-func NewNonce() []byte {
-	nonce := make([]byte, 12)
+func NewNonce() (nonce []byte) {
+	nonce = make([]byte, 12)
 	rand.Read(nonce)
 	return nonce
 }
 
-func NewKey(salt, password []byte) []byte {
-	key, err := scrypt.Key(password, salt, 16384, 8, 1, 32)
+func NewKey(salt, password []byte) (key []byte) {
+	key, err = scrypt.Key(password, salt, 16384, 8, 1, 32)
 
 	if err != nil {
 		log.Fatal(err)
